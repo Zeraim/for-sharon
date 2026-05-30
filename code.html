@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>For Sharon | Happy Birthday</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#4b4166",
+                    "tertiary-container": "#a0b5b2",
+                    "secondary": "#63597f",
+                    "on-error": "#ffffff",
+                    "primary-container": "#d4a5a5",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#d1e7e4",
+                    "on-secondary-fixed": "#1e1638",
+                    "on-background": "#1b1c19",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#5d3a3b",
+                    "outline-variant": "#d4c2c2",
+                    "tertiary-fixed-dim": "#b6cbc8",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#30312e",
+                    "secondary-container": "#ded1fe",
+                    "on-secondary-container": "#61587e",
+                    "surface-container-highest": "#e4e2dd",
+                    "outline": "#827473",
+                    "on-primary-fixed": "#2f1314",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#ffdad9",
+                    "surface-bright": "#fbf9f4",
+                    "on-tertiary-fixed-variant": "#374a48",
+                    "surface-container": "#f0eee9",
+                    "background": "#fbf9f4",
+                    "on-surface": "#1b1c19",
+                    "on-tertiary-container": "#344745",
+                    "on-primary-fixed-variant": "#603d3e",
+                    "inverse-on-surface": "#f2f1ec",
+                    "tertiary": "#4f6260",
+                    "on-tertiary-fixed": "#0b1f1d",
+                    "surface-variant": "#e4e2dd",
+                    "secondary-fixed-dim": "#cdc0ec",
+                    "surface-container-low": "#f5f3ee",
+                    "on-surface-variant": "#504444",
+                    "secondary-fixed": "#e8ddff",
+                    "inverse-primary": "#ecbbba",
+                    "surface": "#fbf9f4",
+                    "surface-container-high": "#eae8e3",
+                    "surface-dim": "#dbdad5",
+                    "primary-fixed-dim": "#ecbbba",
+                    "surface-tint": "#7b5455",
+                    "primary": "#7b5455",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "card-padding": "1.5rem"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["DM Sans"],
+                    "label-sm": ["DM Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes float-particle {
+            0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes slow-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes grain {
+            0%, 100% { transform:translate(0, 0) }
+            10% { transform:translate(-5%, -10%) }
+            20% { transform:translate(-15%, 5%) }
+            30% { transform:translate(7%, -25%) }
+            40% { transform:translate(-5%, 25%) }
+            50% { transform:translate(-15%, 10%) }
+            60% { transform:translate(15%, 0%) }
+            70% { transform:translate(0%, 15%) }
+            80% { transform:translate(3%, 35%) }
+            90% { transform:translate(-10%, 10%) }
+        }
+
+        .particle {
+            position: fixed;
+            top: -10%;
+            pointer-events: none;
+            z-index: 100;
+            animation: float-particle linear infinite;
+        }
+
+        .film-grain {
+            position: fixed;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 9999;
+            animation: grain 8s steps(10) infinite;
+        }
+
+        .polaroid-frame {
+            padding: 12px 12px 40px 12px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+            animation: slow-float 6s ease-in-out infinite;
+        }
+
+        .polaroid-frame:nth-child(even) {
+            animation-delay: -3s;
+        }
+
+        .polaroid-frame:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            z-index: 10;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-nav {
+            background: rgba(251, 249, 244, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .mouse-halo {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 165, 165, 0.15) 0%, rgba(212, 165, 165, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .halo-active .mouse-halo {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .particle, .film-grain, .polaroid-frame, .fade-in-section, .mouse-halo, .parallax-bg {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+
+        /* Progress bar de la música */
+        #progress-bar {
+            height: 3px;
+            background: #d4a5a5;
+            border-radius: 2px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 4px;
+        }
+        #progress-fill {
+            height: 100%;
+            background: #7b5455;
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.5s linear;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<div class="film-grain"></div>
+<div class="mouse-halo" id="cursor-halo"></div>
+<div id="particle-container"></div>
+
+<!-- ✅ ELEMENTO DE AUDIO — el src debe coincidir exactamente con el nombre de tu archivo MP3 -->
+<audio id="mi-audio" loop>
+  <source src="Rauw_Alejandro_-_Carita_Linda.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 glass-nav flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<div class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary italic">For Sharon</div>
+<nav class="hidden md:flex gap-gutter">
+<a class="text-primary font-bold border-b border-primary/20 cursor-pointer active:opacity-70 transition-colors duration-300" href="#hero">Para ti</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#gallery">Galeria</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#message">Carta</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="favorite">favorite</span>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden halo-active" id="hero">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<div class="w-full h-[120%] -top-[10%] absolute bg-cover bg-center transition-transform duration-100 ease-out" id="hero-parallax" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUQ0vxYEb3rAbedwAPvI5krIjvbMh5awQ5szF2aCHFlBPKOMUYWs-h607mvuOvcIGdDyfoDG6xVE4lZsw27_hAxYLZWzI6QYCZMj0Bz62dTBAYLcL8vYE7bUDlLnLkdyXLaoMGpCzViFJKAfNlm5R3kRa1PdlZ6LPy_Zao2zThAjYtRgfVV4VWD7cX4mE0CUJwp2zFDbLTKLz4cyfF0gbN9FtrtpdtAaOQrj3r9Xb9Iq9xnuhZ1eWLTPnyA9pvqHVJNwCCYjmzVztL')"></div>
+</div>
+<div class="relative z-20 text-center px-margin-mobile fade-in-section pt-24">
+<div class="mb-unit-8 inline-block animate-bounce opacity-80">
+<span class="material-symbols-outlined text-primary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<h1 class="font-display-lg text-6xl md:text-8xl text-white mb-6 drop-shadow-lg">
+                Happy Birthday <br/>
+<span class="italic font-normal">Sharon 🌸</span>
+</h1>
+<p class="text-white/90 font-headline-lg-mobile md:text-headline-lg max-w-2xl mx-auto mb-10 font-light">
+                Para alguien que hace que la vida se sienta más suave, brillante y hermosa.
+            </p>
+<div class="relative inline-block mt-8 group">
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white/30 overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-105">
+<img alt="Portrait of Sharon" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtrOZxabXogmP7Hw07uG_fD_Sz5B4wTpbdz9XZInp8bv2Iz1p4NF8Ndz5B2bdNhyY5R-ITyPivD_WO4ubHxwyJ44SlY9QrHb14BMKU4C8g3mAlN2IYnf7lT0mCpMvHV95mf8dMmqvn5DWrHNXpGoHakr9eD28F16WyAwMTc1y14UlwHcNYphMb4H-32y-o2VuQxfDAiPqU0cfh5CDGFMm8oIoAiPb-qUn2Kd9U-ndKAxT2yLhrbwmY8giwiqBR2jg2zABwY0DgqNgG"/>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-pulse">
+<span class="material-symbols-outlined text-white text-3xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Floating Music Player -->
+<div class="fixed bottom-margin-mobile right-margin-mobile md:bottom-margin-desktop md:right-margin-desktop z-[60]">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md p-4 rounded-xl shadow-xl flex flex-col gap-2 border border-outline-variant/30" style="min-width:220px">
+  <div class="flex items-center gap-4">
+    <div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center overflow-hidden transition-transform duration-500" id="album-art">
+      <span class="material-symbols-outlined text-on-primary-container" id="music-note-icon">music_note</span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <div class="font-label-sm text-primary uppercase tracking-widest">Now Playing</div>
+      <div class="font-body-md font-bold text-on-surface truncate">Carita Linda</div>
+      <div class="text-xs text-on-surface-variant">Rauw Alejandro</div>
+    </div>
+    <button class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:scale-110 transition-all active:scale-95 shadow-lg" id="play-btn">
+      <span class="material-symbols-outlined transition-all" id="play-icon">play_arrow</span>
+    </button>
+  </div>
+  <!-- Barra de progreso -->
+  <div id="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
+</div>
+</div>
+<!-- Emotional Transition 1 -->
+<section class="py-32 px-margin-mobile bg-surface text-center">
+<div class="max-w-4xl mx-auto fade-in-section">
+<h2 class="font-headline-lg text-primary mb-8 italic">"A year of laughter, growth, and love."</h2>
+<div class="h-px w-24 bg-primary-container mx-auto"></div>
+</div>
+</section>
+<!-- Memory Gallery (Scrapbook Style) -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop relative overflow-hidden" id="gallery">
+<!-- Floating Floral Accents -->
+<div class="absolute top-0 left-0 w-32 h-32 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-9xl">filter_vintage</span>
+</div>
+<div class="absolute bottom-20 right-0 w-32 h-32 opacity-20 pointer-events-none rotate-45">
+<span class="material-symbols-outlined text-secondary text-9xl">eco</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-center">
+<!-- Polaroid 1 -->
+<div class="fade-in-section flex justify-center">
+<div class="polaroid-frame -rotate-3 hover:rotate-0">
+<div class="w-72 h-80 overflow-hidden mb-4 bg-surface-container">
+<img alt="Memory Image 1" class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcv76Cnw4MeuQXEa7B0-M_rNiGDEMC9zG_TTZ4IR--0VsuKcwINWzknTjgNqhH5SjryMld0eeccGjslR9xSeZEUXcVzgNpIb_4MaNKQARvYt3G7WRnJm-iQ6xQEW2LmS2pTSEqg_-UhzdyaG8bPjLfuNwOUOpmtbJFCiLMR8WfJU_S3GFWhqiVLwAuCnazO_AYOWyWuOKeFGJoHp0QUgd1wIdkItCiTNiRdGFzZgaqphHiEOzK2diFTqbk8ZHqLP-IvuiK9J6J3IwD"/>
+</div>
+<p class="font-display-lg text-lg text-on-surface-variant text-center">A beautiful moment</p>
+</div>
+</div>
+<!-- Central Content -->
+<div class="fade-in-section text-center lg:order-none order-first md:order-none mb-16 md:mb-0">
+<h3 class="font-headline-lg text-primary-fixed-dim bg-primary px-6 py-2 inline-block mb-6 rounded-full text-white">Muchas Felicidades.</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed px-4">
+                    Un año más de crecimiento, mostrando quién eres a lo largo del tiempo, trayendo paz y alegría.
+                </p>
+</div>
+<!-- Polaroid 2 -->
+<div class="fade-in-section flex justify-center">
+<div class="polaroid-frame rotate-2 hover:rotate-0" style="animation-delay: -1.5s;">
+<div class="w-72 h-80 overflow-hidden mb-4 bg-surface-container">
+<img alt="Memory Image 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtrOZxabXogmP7Hw07uG_fD_Sz5B4wTpbdz9XZInp8bv2Iz1p4NF8Ndz5B2bdNhyY5R-ITyPivD_WO4ubHxwyJ44SlY9QrHb14BMKU4C8g3mAlN2IYnf7lT0mCpMvHV95mf8dMmqvn5DWrHNXpGoHakr9eD28F16WyAwMTc1y14UlwHcNYphMb4H-32y-o2VuQxfDAiPqU0cfh5CDGFMm8oIoAiPb-qUn2Kd9U-ndKAxT2yLhrbwmY8giwiqBR2jg2zABwY0DgqNgG"/>
+</div>
+<p class="font-display-lg text-lg text-on-surface-variant text-center">Happy Memories</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Emotional Transition 2 -->
+<section class="py-40 bg-surface-container-low text-center overflow-hidden relative">
+<div class="fade-in-section relative z-10">
+<h2 class="font-display-lg text-4xl md:text-6xl text-secondary italic mb-6">To the most beautiful soul I know.</h2>
+<p class="text-on-surface-variant font-body-md tracking-[0.2em] uppercase">You are art in human form.</p>
+</div>
+<!-- Decorative blurred circle -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-container/10 blur-[100px] rounded-full"></div>
+</section>
+<!-- Final Message Section -->
+<section class="relative py-32 flex items-center justify-center min-h-[80vh] overflow-hidden halo-active" id="message">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-[120%] -top-[10%] absolute bg-cover bg-center opacity-30 saturate-50 transition-transform duration-100 ease-out" id="footer-parallax" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUQ0vxYEb3rAbedwAPvI5krIjvbMh5awQ5szF2aCHFlBPKOMUYWs-h607mvuOvcIGdDyfoDG6xVE4lZsw27_hAxYLZWzI6QYCZMj0Bz62dTBAYLcL8vYE7bUDlLnLkdyXLaoMGpCzViFJKAfNlm5R3kRa1PdlZ6LPy_Zao2zThAjYtRgfVV4VWD7cX4mE0CUJwp2zFDbLTKLz4cyfF0gbN9FtrtpdtAaOQrj3r9Xb9Iq9xnuhZ1eWLTPnyA9pvqHVJNwCCYjmzVztL')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile fade-in-section">
+<div class="inline-flex items-center gap-2 mb-8 px-4 py-1 border border-primary/30 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="text-label-sm text-primary uppercase tracking-widest">My Eternal Wish</span>
+</div>
+<h2 class="font-display-lg text-5xl md:text-7xl text-on-surface mb-12">
+                Always &amp; Forever, <br/>
+<span class="text-primary italic">Sharon</span>
+</h2>
+<div class="max-w-lg mx-auto text-on-surface-variant italic font-light text-xl leading-loose">
+                Te deseo los mejores deseos para tu cumpleaños. Aun si es reciente que estamos hablando y conociéndonos, es tiempo suficiente para saber una cosa: la grandiosa persona que eres. Espero que sigas manteniendo quién eres, aun con todo lo que viene y vendrá. Espero que disfrutes y goces de tu cumpleaños.
+
+Quiero seguir conociéndote y, aun con lo reciente que es todo esto, espero poder estar a tu lado para presenciar todo lo que lograrás. Te esfuerzas mucho día a día, así que te mereces tu día y más. Te deseo lo mejor. <br/>
+                Happy Birthday,Sharon.
+            </div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-4 w-full p-gutter py-unit-8">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary">For Sharon</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant font-label-sm hover:text-primary underline transition-all" href="#">Privacy</a>
+<a class="text-on-surface-variant font-label-sm hover:text-primary underline transition-all" href="#">Memories</a>
+</div>
+<p class="text-secondary dark:text-secondary-fixed-dim font-label-sm text-label-sm">
+            Feliz Cumpleaños, Sharon • Por siempre  &amp; para siempre
+        </p>
+</footer>
+<script>
+        // Particle System
+        const particleContainer = document.getElementById('particle-container');
+        const particleTypes = [
+            { text: '🌸', class: 'petal' },
+            { text: '✨', class: 'light' },
+            { text: '🤍', class: 'petal' },
+            { text: '🍃', class: 'petal' },
+            { text: '🌷', class: 'petal' },
+            { text: '·', class: 'moonlight' }
+        ];
+        
+        function createParticle() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const particle = document.createElement('div');
+            const type = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+            particle.className = 'particle';
+            particle.innerText = type.text;
+            const duration = Math.random() * 8 + 6;
+            const size = type.class === 'moonlight' ? Math.random() * 10 + 5 : Math.random() * 15 + 10;
+            const startX = Math.random() * 100;
+            particle.style.left = startX + 'vw';
+            particle.style.animationDuration = duration + 's';
+            particle.style.opacity = Math.random() * 0.4 + 0.2;
+            particle.style.fontSize = size + 'px';
+            if (type.class === 'moonlight') {
+                particle.style.color = '#fffbe6';
+                particle.style.textShadow = '0 0 5px rgba(255,255,255,0.8)';
+            }
+            particleContainer.appendChild(particle);
+            setTimeout(() => { particle.remove(); }, duration * 1000);
+        }
+        setInterval(createParticle, 500);
+
+        // Scroll Fade-In Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in-section').forEach(section => observer.observe(section));
+
+        // Mouse Halo
+        const halo = document.getElementById('cursor-halo');
+        document.addEventListener('mousemove', (e) => {
+            halo.style.left = e.clientX + 'px';
+            halo.style.top = e.clientY + 'px';
+        });
+
+        // Parallax
+        const heroParallax = document.getElementById('hero-parallax');
+        const footerParallax = document.getElementById('footer-parallax');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (heroParallax) heroParallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+            if (footerParallax) {
+                const offset = (window.innerHeight - footerParallax.parentElement.getBoundingClientRect().top) * 0.1;
+                footerParallax.style.transform = `translateY(${offset}px)`;
+            }
+        });
+
+        // ✅ MÚSICA — conectado al elemento <audio>
+        const audio = document.getElementById('mi-audio');
+        const playBtn = document.getElementById('play-btn');
+        const playIcon = document.getElementById('play-icon');
+        const albumArt = document.getElementById('album-art');
+        const noteIcon = document.getElementById('music-note-icon');
+        const progressFill = document.getElementById('progress-fill');
+        const progressBar = document.getElementById('progress-bar');
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                audio.play();
+                playIcon.textContent = 'pause';
+                playBtn.classList.add('scale-110', 'bg-secondary');
+                albumArt.classList.add('animate-spin');
+                albumArt.style.animationDuration = '10s';
+                noteIcon.textContent = 'equalizer';
+                noteIcon.classList.add('animate-pulse');
+            } else {
+                audio.pause();
+                playIcon.textContent = 'play_arrow';
+                playBtn.classList.remove('scale-110', 'bg-secondary');
+                albumArt.classList.remove('animate-spin');
+                noteIcon.textContent = 'music_note';
+                noteIcon.classList.remove('animate-pulse');
+            }
+        });
+
+        // Actualizar barra de progreso
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = pct + '%';
+            }
+        });
+
+        // Click en la barra para saltar posición
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const ratio = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = ratio * audio.duration;
+        });
+
+        // Initial visible check
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                if (section.getBoundingClientRect().top < window.innerHeight) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body></html>
